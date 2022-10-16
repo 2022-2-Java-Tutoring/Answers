@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("정수 입력 >>" );
+
+		int num = scanner.nextInt();
+		int digit_10 = (num % 100) / 10;
+		int digit_1 = num % 10;
+		
+		System.out.printf(
+				"%s 10의 자리와 1의 자리가 %s.\n",
+				(digit_10 == digit_1) ? "Yes!": "No!",
+				(digit_10 == digit_1) ? "같습니다": "다릅니다");
+		
+		System.out.println(digit_10 + digit_1);
+		scanner.close();
+	}
+}

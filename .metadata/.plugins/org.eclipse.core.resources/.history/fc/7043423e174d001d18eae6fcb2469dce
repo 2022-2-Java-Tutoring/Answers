@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+// 02-02-Operation 문제의 확장
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num, d10, d1;
+		do{
+			System.out.print("두 자리 정수 입력 >>");
+			num = sc.nextInt();
+		} while(num<10 || 99<num); // 두 자리 정수 입력 보장
+		
+		d10 = (num % 100) / 10; // 두 자리 정수 입력이 보장되지 않은 경우
+		d1 = num % 10;
+		
+		String s10, s1;
+		switch(d10) {
+			default: s10 = "";
+			case 3: case 6: case 9: s10 = "짝";
+		}
+		switch(d1) {
+			default: s1 = "";
+			case 3: case 6: case 9: s1 = "짝";
+		}
+		
+		System.out.printf("박수%s%s",s10,s1);
+		sc.close();
+	}
+}
