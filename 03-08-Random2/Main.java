@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
+// 중복없는 n개의 정수 배열
+
 public class Main {
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		
-		// 중복없는 n개의 정수 배열
 		int n, limit = 100;
+		Scanner sc = new Scanner(System.in);
 		do{
 			System.out.print("정수 몇 개?");
 			n = sc.nextInt();
 		} while(n<1 || limit<n); // [1, limit]
+		sc.close();
 		
 		int arr[] = new int[n];
 		boolean[] isAssigned = new boolean[limit+1]; // false로 초기화된 상태; 할당 여부 기록
@@ -28,7 +29,5 @@ public class Main {
 			System.out.print(arr[i-1] + "\t");
 			if(i%10 == 0) System.out.println();
 		}
-		
-		sc.close();
 	}
 }
